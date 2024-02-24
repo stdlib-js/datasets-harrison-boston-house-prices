@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-harrison-boston-house-prices@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/datasets-harrison-boston-house-prices/tags). For example,
+
+```javascript
 import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-harrison-boston-house-prices@v0.2.1-esm/index.mjs';
 ```
 
@@ -122,7 +127,7 @@ var data = dataset();
 <script type="module">
 
 import Plot from 'https://cdn.jsdelivr.net/gh/stdlib-js/plot@esm/index.mjs';
-import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-harrison-boston-house-prices@v0.2.1-esm/index.mjs';
+import dataset from 'https://cdn.jsdelivr.net/gh/stdlib-js/datasets-harrison-boston-house-prices@esm/index.mjs';
 
 var data;
 var plot;
