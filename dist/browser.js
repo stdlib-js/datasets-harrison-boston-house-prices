@@ -20,29 +20,26 @@
 
 // MODULES //
 
-var bench = require( '@stdlib/bench-harness' );
-var isArray = require( '@stdlib/assert-is-array' );
-var format = require( '@stdlib/string-format' );
-var pkg = require( './../package.json' ).name;
-var dataset = require( './../lib/browser.js' );
+var copy = require( '@stdlib/utils-copy' );
+var data = require( './../data/data.json' );
 
 
 // MAIN //
 
-bench( format( '%s::browser', pkg ), function benchmark( b ) {
-	var data;
-	var i;
-	b.tic();
-	for ( i = 0; i < b.iterations; i++ ) {
-		data = dataset();
-		if ( data.length === 0 ) {
-			b.fail( 'should have a length greater than 0' );
-		}
-	}
-	b.toc();
-	if ( !isArray( data ) ) {
-		b.fail( 'should return an array' );
-	}
-	b.pass( 'benchmark finished' );
-	b.end();
-});
+/**
+* Returns a dataset derived from information collected by the US Census Service concerning housing in Boston, Massachusetts (1978).
+*
+* @returns {ObjectArray} housing data
+*
+* @example
+* var data = dataset();
+* // returns [ {...}, {...}, ... ]
+*/
+function dataset() {
+	return copy( data );
+}
+
+
+// EXPORTS //
+
+module.exports = dataset;
